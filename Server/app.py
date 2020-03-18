@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask import render_template
 from flask_cors import CORS, cross_origin
 import pickle
 import nltk
@@ -13,8 +14,7 @@ cors = CORS(app)
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
-    data = " Donkey"
-    return jsonify({'data': data})
+    return render_template("index.html")
 
 
 def clean_text(a):
