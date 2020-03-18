@@ -33,13 +33,13 @@
 					<img src="images/img-01.png" alt="IMG">
 				</div>
 
-				<form class="contact100-form validate-form">
+				<form class="contact100-form validate-form" onsubmit=event.preventDefault()>
 					<span class="contact100-form-title text-center">
 						Send Some Sugession
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate="Name is required">
-						<input class="input100" type="text" name="name" placeholder="Name">
+						<input class="input100" type="text" name="name" placeholder="Name" id="name">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-user" aria-hidden="true"></i>
@@ -47,7 +47,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
+						<input class="input100" type="text" name="email" placeholder="Email" id="email">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="far fa-envelope"></i>
@@ -56,7 +56,7 @@
 
 					<div class="wrap-input100 validate-input" data-validate="Message is required">
 
-						<textarea class="input100" name="message" placeholder="Message"></textarea>
+						<textarea class="input100" name="message" placeholder="Message" id="message"></textarea>
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fas fa-sms fa-2x"></i>
@@ -64,9 +64,13 @@
 					</div>
 
 					<div class="container-contact100-form-btn">
-						<button class="contact100-form-btn">
+						<button class="contact100-form-btn" id="submit">
 							<i class="fas fa-paper-plane">&nbsp &nbsp</i>Send
 						</button>
+					</div>
+					</br></br>
+					<div id="result">
+					
 					</div>
 				</form>
 			</div>
@@ -92,6 +96,7 @@
 	</script>
 	<!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script src="js/app.js"></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>

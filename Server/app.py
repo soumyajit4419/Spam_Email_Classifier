@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS, cross_origin
 import pickle
 import nltk
 import re
@@ -6,8 +7,8 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
 
-
 app = Flask(__name__)
+cors = CORS(app)
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -33,9 +34,9 @@ def check():
     with open('../Model/count_vect', 'rb') as f:
         vectorizer = pickle.load(f)
     if model.predict(vectorizer.transform([clean_text(message)])):
-        return jsonify({'data': 'spam'})
+        return jsonify({'data': 'Spam Message!!', 'code': 1})
     else:
-        return jsonify({'data': 'not spam'})
+        return jsonify({'data': 'Non Spam Message!!', 'code': 0})
 
 
 if __name__ == '__main__':
